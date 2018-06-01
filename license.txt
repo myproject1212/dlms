@@ -1,0 +1,54 @@
+                  Reservation of Rights Agreement
+
+This Reservation of Rights Agreement (the 'Agreement') is made by and among 
+[Enterprise Holdings Inc.] its subsidiaries, divisions, affiliates, successors,
+and assignees, and those acting under its permission and on its authority 
+(hereafter 'Enterprise') and you in connection with the software and/or
+associated object or source code distributed with this Agreement and referenced
+in the associated contracts or agreements governing the relationship between 
+you and Enterprise (the 'Software').
+
+By accessing Enterprise's Software, you agree to the terms of this Agreement.  
+This Agreement is meant to complement the contracts and/or agreements you may 
+have entered into defining and governing your relationship with Enterprise and
+any access to, or use of, the Software (the 'Contracts').  This Agreement does
+not convey any rights in or to the Software.  Unless specifically granted in 
+the Contracts, you have no right to modify, distribute or create derivative 
+works based upon the Software.  The terms of this Agreement are subject to the
+terms of the Contracts and any inconsistency between these terms and those of
+the Contracts shall be governed by the language of the Contracts.
+
+Enterprise is the owner of all rights, title, and interest in and to the 
+Software, including, but not limited to, any and all copyrights associated 
+with the Software.  Pursuant to the terms and conditions of the Contracts, 
+Enterprise has granted to you rights to or in the Software (the 'Rights') 
+in order to perform under the Contracts.  You agree not to remove or alter 
+any copyright notices provided in or with the Software and you agree not to 
+remove or alter any reference, access or link to this Agreement.  
+
+The Software may be distributed or bundled with other third-party software.  
+You acknowledge and agree that your right to use, access, or interact with any
+such third-party software is governed exclusively by the terms and conditions
+of any licenses, agreements or contracts from those third parties accompanying
+any such third-party software when distributed to you.  Any such third-party
+contracts shall govern and control your use, access, or interaction with any
+third-party software in connection with the performance of your duties under
+the Contracts or this Agreement.  
+
+Your rights in and to the Software are limited to those Rights specified in
+the Contracts and you  acknowledge that you have received only those Rights in
+the Software specified in the Contracts and that all rights in or to the 
+Software not specifically granted to you in the Contracts remain entirely
+with Enterprise.  Unless expressly granted in the Contracts, you acknowledge
+that you receive no rights of ownership in or to the Software through your
+use, access, or interaction with that Software.
+
+You further acknowledge that your Rights in and to the Software are entirely
+dependent upon your compliance with all of the terms and conditions of the
+Contracts.  You agree that your failure to comply with any of the terms and
+conditions of the Contracts will result in the immediate termination of any
+Rights you may have received by way of the Contracts and any continued 
+exercise of the Rights after such termination will be considered 
+an infringement of Enterprise's rights in and to the Software 
+and will be dealt with accordingly. 
+

@@ -1,0 +1,255 @@
+{
+	"variables": [],
+	"info": {
+		"name": "DeleteLogisticsMapping",
+		"_postman_id": "38f1d56b-6891-e05b-9498-13c505950a20",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "generateToken_Remsrv",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"var newToken = jsonData.data;",
+							"postman.setGlobalVariable(\"dlm_token\", newToken);",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Token is Valid\"] = jsonData.expired === false;",
+							"",
+							"tests[\"Token is valid format\"] = jsonData.validFormat === true;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "{{url}}/authenticate/service?passwordMd5Hashed=true",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"authenticate",
+						"service"
+					],
+					"query": [
+						{
+							"key": "passwordMd5Hashed",
+							"value": "true"
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\":\"SVC_REMSRVC\",\r\n\"password\":\"REDACTED\",\r\n\"locale\" :\"en_US\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "hello",
+			"request": {
+				"url": "{{url}}/api/hello",
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RSI-Token",
+						"value": "{{dlm_token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Locale",
+						"value": "en_US",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Calling-Application",
+						"value": "remsrv",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "{{dlm_token}}",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Caller-Id",
+						"value": "e393jz",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Span-Id",
+						"value": "4kg3",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Trace-Id",
+						"value": "Delete",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "info",
+			"request": {
+				"url": "{{url}}/info",
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RSI-Token",
+						"value": "{{dlm_token}}",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getPhysicalMapping",
+			"request": {
+				"url": "{{url}}/api/mapping/1000001/physical",
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RSI-Token",
+						"value": "{{dlm_token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Locale",
+						"value": "en_US",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Calling-Application",
+						"value": "remsrv",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "{{dlm_token}}",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Caller-Id",
+						"value": "e393jz",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Span-Id",
+						"value": "4kg3",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Trace-Id",
+						"value": "Delete",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getControllingMapping",
+			"request": {
+				"url": "{{url}}/api/mapping/1000001/controlling",
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RSI-Token",
+						"value": "{{dlm_token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Locale",
+						"value": "en_US",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Calling-Application",
+						"value": "remsrv",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "{{dlm_token}}",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Caller-Id",
+						"value": "e393jz",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Span-Id",
+						"value": "4kg3",
+						"description": ""
+					},
+					{
+						"key": "Ehi-Trace-Id",
+						"value": "Delete",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

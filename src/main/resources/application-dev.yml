@@ -1,0 +1,9 @@
+ehi:
+  locator:
+    ws:
+      endpointAddress:
+        base: "http://locator-int1.corp.erac.com/locsvc/services/LocatorService"
+
+# Database settings
+jdbc:
+  url: "jdbc:mariadb://devdbv0205.corp.erac.com:3306/dlm"

@@ -1,0 +1,10 @@
+ehi:
+  auth:
+    ws:
+      endpointAddress:
+        base: "https://appsecwse-iprod.corp.erac.com/appsec/enhanced/webservice/rsi/"
+
+appsec:
+  logexp:
+    local:
+      logonUrl: "https://appsecgateway-iprod.corp.erac.com/AppSecGateway_WAR/logon/logon.do"

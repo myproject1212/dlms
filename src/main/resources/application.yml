@@ -1,0 +1,95 @@
+name: ${project.name}
+version: ${project.version}
+ehi:
+  auth:
+    ws:
+      appStaticId: 2114755692
+appsec:
+  logexp:
+    local:
+      appStaticId: ${ehi.auth.ws.appStaticId}
+  service:
+    authentication:
+      tokenHeader: Authorization
+rsi:
+  application:
+    version: 1
+    name: DeleteLogisticsMapping
+    environment: ${erac.serverLevel}
+  appsec:
+    username: ${u.appsec}
+    password: ${p.appsec}
+security:
+  ignored: /health, /info, /resources/**, /swagger-ui.html, /webjars/springfox-swagger-ui/**, /swagger-resources/**, /v2/api-docs/**
+  filter-order: -491
+  basic:
+    enabled: false
+openapi: 3.0.0
+info:
+  app:
+    title: Delete logistics Mapping Service API
+    description: Delete logistics Mapping Service API
+    version: ${project.version}
+  java:
+    version: ${java.version}
+    vendor: ${java.vendor}
+  tomcat:
+    version: ${catalina.home}
+swagger:
+  appName: Delete Logistics Mapping Service
+  description: Delete Logistics Mapping Service API
+  contactName: Remarketing
+  apiVersion: v1
+  infoUrl: https://confluence.ehi.com/display/VEHSLS/vMap
+  contactEmail: '#ITRemarketingServicesSupport@ehi.com'
+  apiDocs:
+    hello:
+      description: A test endpoint that returns "The application is running."
+servers:
+  url: http://localhost:8080/
+paths:
+  /hello:
+    get:
+      summary: Returns Hello
+      description: Returns Hello
+      responses:
+        '200':
+          description: A string of Hello
+          content:
+            application/json:
+              schema:
+                type: String
+                items:
+                  type: String
+spring:
+  mvc:
+    view:
+      prefix: WEB-INF/view/
+      suffix: .jsp
+  datasource:
+    url: ${jdbc.url}
+    username: ${u.jdbc}
+    password: ${p.jdbc}
+    test-while-idle: true
+    test-on-borrow: true
+    validation-query: SELECT 1 FROM DUAL
+    max-idle: 20
+    max-active: 20
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  resources:
+    cache-period: 31556926
+    chain:
+      cache: true
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+  mail:
+    host: mailhost
+  jackson:
+    serialization:
+      indent-output: true

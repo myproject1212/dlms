@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ}|level=%p|server=${erac.serverLevel}|app=DLM|thread=%t|logger=%c|subc=%M|message=%m %n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SECURITY_APPENDER"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${catalina.base}/logs/se.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>se.%d{yyyy-MM-dd HH:mm}.log</fileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+            <param name="MaxFileSize" value="500MB" />
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ}|level=%p|server=${erac.serverLevel}|app=DLM|thread=%t|logger=%c|subc=%M|message=%m %n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SPLUNK_APPENDER"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${catalina.base}/logs/delete-logistics-mapping.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>delete-logistics-mapping.%d{yyyy-MM-dd HH:mm}.log</fileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+            <param name="MaxFileSize" value="500MB" />
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ}|level=%p|server=${erac.serverLevel}|app=DLM|thread=%t|logger=%c|subc=%M|message=%m %n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root>
+        <appender-ref ref="SPLUNK_APPENDER" />
+    </root>
+
+    <logger name="console">
+        <level value="error" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="security" additivity="false">
+        <level value="warn" />
+        <appender-ref ref="SECURITY_APPENDER" />
+    </logger>
+
+    <logger name="com.erac.dlm" additivity="false">
+        <level value="warn" />
+        <appender-ref ref="SPLUNK_APPENDER" />
+    </logger>
+
+
+</configuration>
